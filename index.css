@@ -1,0 +1,388 @@
+/* VARIABLES COULEURS */
+:root {
+    --title-btn: #FF6F61;       /* Rouge corail */
+    --header-footer: #1F3A93;   /* Bleu profond */
+    --background: #F0F4F8;      /* Gris clair */
+    --paragraph: #2C3E50;       /* Gris foncé */
+    --cadre: #FFFFFF;            /* Fond des cadres */
+    --border-cadre: #ccc;        /* Bordure des cadres */
+}
+
+/* BODY */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background);
+    color: var(--paragraph);
+}
+
+/* HEADER */
+header {
+    height: 100px;
+    background-color: var(--header-footer);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* FOOTER */
+footer {
+    height: 80px;
+    padding-top: 25px;
+    text-align: center;
+    border-top: 2px solid var(--header-footer);
+    background-color: var(--header-footer);
+    color: white;
+}
+
+/* NAVIGATION */
+nav {
+    width: 100%;
+    background-color: var(--header-footer);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+nav a {
+    text-decoration: none;
+    padding: 12px 20px;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.menu-ind:hover { border-top: 5px solid #FF6F61; }
+.menu-exp:hover { border-top: 5px solid #FFA500; }
+.menu-rea:hover { border-top: 5px solid #2ECC71; }
+.menu-cont:hover { border-top: 5px solid #3498DB; }
+
+/* SECTIONS */
+section {
+    width: 90%;
+    margin: 40px auto;
+}
+
+.cadre {
+    background-color: var(--cadre);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--border-cadre);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+/* COLONNES */
+.sec {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.left {
+    flex: 1 1 35%;
+}
+
+.right {
+    flex: 1 1 60%;
+}
+
+/* COMPÉTENCES */
+.sous {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.sousleft { flex: 0 0 60%; }
+.sousright { flex: 0 0 35%; text-align: right; }
+
+/* IMAGE */
+img { max-width: 100%; height: auto; border-radius: 8px; }
+
+/* HR SEPARATOR */
+.separator {
+    border: none;
+    border-top: 2px solid #ccc;
+    margin: 30px 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .sec { flex-direction: column; }
+    .left, .right { width: 100%; text-align: center; }
+    .sous { flex-direction: column; text-align: center; }
+    .sousright { text-align: center; margin-top: 5px; }
+    img { max-width: 80%; margin: 0 auto; }
+}
+
+@media (max-width: 480px) {
+    nav a { padding: 10px 12px; font-size: 14px; }
+}
+
+
+
+
+/* CENTRER CHAQUE SECTION AVEC LARGEUR FIXE ET MARGES AUTO */
+section {
+    max-width: 1000px;      /* Largeur maximale de la section */
+    width: 90%;             /* Largeur responsive (90% de l'écran si plus petit) */
+    margin: 40px auto;      /* Centre horizontalement et ajoute un espace vertical */
+    padding: 20px;          /* Espace intérieur autour du contenu */
+    background-color: #ffffff; /* Fond blanc pour bien détacher la section */
+    border-radius: 10px;      /* Coins arrondis */
+    border: 1px solid #ccc;   /* Bordure légère */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* Ombre légère */
+    box-sizing: border-box;    /* Inclut padding et border dans la largeur */
+}
+
+/* Titre des sections */
+section h2 {
+    text-align: center;
+    color: #FF6F61; /* Couleur du titre */
+    margin-bottom: 20px;
+}
+
+/* FLEX POUR CONTENU GAUCHE / DROITE */
+.sec {
+    display: flex;
+    flex-wrap: wrap;   /* Passe en colonne si écran trop petit */
+    gap: 20px;         /* Espace entre gauche et droite */
+}
+
+.left {
+    flex: 1 1 35%;     /* Colonne gauche (image) */
+}
+
+.right {
+    flex: 1 1 60%;     /* Colonne droite (texte) */
+}
+
+/* IMAGE RESPONSIVE DANS SECTION */
+.left img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;    /* Centre l'image dans sa colonne */
+}
+
+/* RESPONSIVE POUR TABLETTES ET MOBILES */
+@media (max-width: 768px) {
+    .sec {
+        flex-direction: column; /* Colonne verticale sur petit écran */
+        align-items: center;
+    }
+    .left, .right {
+        width: 100%;
+        text-align: center;
+    }
+    .left img {
+        max-width: 80%;
+    }
+}
+.orange{
+    border-top: 5px solid #1F3A93;
+    background-color: #F0F4F8;
+    margin-bottom: 0px;
+}
+.rose {
+    border-top: 5px solid rgba(0,0,0,0.05);
+    background-color: #F0F4F8;
+    margin-bottom: 0px;
+}
+.bleu {
+    border-top: 5px solid rgb(54, 54, 246);
+    background-color: #3498DB;
+    margin-bottom: 0px;
+}
+
+
+
+/* ===== SECTION CONTACT ===== */
+
+.vert {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 30px;
+    background: var(--background);
+}
+
+/* Conteneur principal */
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+/* Texte du contact */
+.contact-text {
+    width: 45%;
+}
+
+.contact-text h1 {
+    color: var(--title-btn);
+    margin-bottom: 15px;
+}
+
+.contact-text p {
+    color: var(--paragraph);
+    font-size: 16px;
+}
+
+.contact-info {
+    margin-top: 20px;
+    padding-left: 15px;
+}
+
+.contact-info li {
+    margin-bottom: 10px;
+    color: var(--paragraph);
+}
+
+
+/* ===== FORMULAIRE ===== */
+
+.contact-form {
+    width: 45%;
+    background: var(--background);
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid var(--header-footer);
+}
+
+.contact-form h3 {
+    text-align: center;
+    color: var(--header-footer);
+    margin-bottom: 20px;
+}
+
+.contact-form form input,
+.contact-form form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid var(--header-footer);
+    border-radius: 8px;
+    outline: none;
+    font-size: 15px;
+}
+
+.contact-form form textarea {
+    height: 130px;
+    resize: vertical;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 12px;
+    background: var(--title-btn);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    background: #ff5748;
+}
+
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .contact-text, .contact-form {
+        width: 100%;
+    }
+}
+
+
+/* ----- BOUTON DE THÈME ----- */
+.theme-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #222;
+    color: #fff;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 999;
+    font-size: 18px;
+}
+
+/* ----- MODE SOMBRE ----- */
+body.dark {
+    background: #111;
+    color: #f1f1f1;
+}
+
+body.dark header,
+body.dark nav,
+body.dark section,
+body.dark footer {
+    background-color: #00000033;
+}
+
+/* ----- CURSEUR PERSONNALISÉ ----- */
+.cursor {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    border: 2px solid #00ffcc;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: 0.1s;
+    z-index: 9999;
+}
+
+/* ----- EFFET CLICK ----- */
+.click-effect {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ff6600;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: boom 0.4s ease-out forwards;
+}
+
+@keyframes boom {
+    from { transform: translate(-50%, -50%) scale(0.5); opacity: 1; }
+    to   { transform: translate(-50%, -50%) scale(2.2); opacity: 0; }
+}
+
+
+
+
+
+

@@ -1,48 +1,40 @@
-// -------------------------
-// 🌙 CHANGER LE THÈME
-// -------------------------
-const themeButton = document.createElement("button");
-themeButton.innerText = "🌙 / ☀️";
-themeButton.classList.add("theme-btn");
-document.body.appendChild(themeButton);
-
-// Si un thème est sauvegardé
-if (localStorage.getItem("theme") === "dark") {
-    document.body.classList.add("dark");
-}
-
-themeButton.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-    if (document.body.classList.contains("dark")) {
-        localStorage.setItem("theme", "dark");
-    } else {
-        localStorage.removeItem("theme");
-    }
+// ----------------------------
+// ANIMATION BARRES DE COMPETENCES
+// ----------------------------
+window.addEventListener("scroll", () => {
+    const skills = document.querySelectorAll(".skill-fill");
+    skills.forEach(skill => {
+        const rect = skill.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 50) {
+            skill.style.width = skill.dataset.value + "%";
+        }
+    });
 });
 
-// -------------------------
-// 🖱️ CURSEUR PERSONNALISÉ
-// -------------------------
-const cursor = document.createElement("div");
-cursor.classList.add("cursor");
-document.body.appendChild(cursor);
+// ----------------------------
+// SCROLL ANIMATION POUR SECTIONS
+// ----------------------------
+const sections = document.querySelectorAll("section");
+const options = { threshold: 0.1 };
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
+}, options);
 
-document.addEventListener("mousemove", (e) => {
-    cursor.style.top = e.pageY + "px";
-    cursor.style.left = e.pageX + "px";
+sections.forEach(section => {
+    section.classList.add("hidden");
+    observer.observe(section);
 });
 
-// -------------------------
-// ✨ EFFET CLICK
-// -------------------------
-document.addEventListener("click", (e) => {
-    const boom = document.createElement("span");
-    boom.className = "click-effect";
-    boom.style.top = e.pageY + "px";
-    boom.style.left = e.pageX + "px";
-    document.body.appendChild(boom);
-
-    setTimeout(() => {
-        boom.remove();
-    }, 400);
+// ----------------------------
+// FORMULAIRE CONTACT SIMPLE
+// ----------------------------
+const contactForm = document.getElementById("contactForm");
+contactForm.addEventListener("submit", e => {
+    e.preventDefault();
+    alert("Merci ! Votre message a été envoyé.");
+    contactForm.reset();
 });
